@@ -4,7 +4,7 @@ export const Card = ({ userInfo }) => {
 
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl p-5 gap-2 m-2 rounded-lg border border-white">
+      <div className="card w-96 bg-base-100 shadow-xl p-5 gap-2 m-2 rounded-lg border border-black">
         <div className="avatar flex justify-center">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img src={image} />

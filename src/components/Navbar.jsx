@@ -1,5 +1,27 @@
+import { useEffect } from "react";
+import { useState } from "react";
 
 export const Navbar = () => {
+
+  const [isSticky, setSticky] = useState(null);
+
+  const scrollHandler = () => {
+    window.addEventListener('scroll', () => {
+      let scrollValue = scrollY;
+      if (scrollValue > 15) {
+        setSticky(true);
+      }
+      else {
+        setSticky(false);
+      }
+      //console.log(scrollValue);
+    })
+  }
+
+  //console.log(isSticky);
+  useEffect(() => {
+    scrollHandler();
+  }, []);
 
   const menuList = [
     {
@@ -21,7 +43,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <div className="navbar bg-base-100">
+    <div className={`navbar sticky top-0 ${isSticky ? "bg-red-300 transition-all duration-200 shadow-xl":""} z-50`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
